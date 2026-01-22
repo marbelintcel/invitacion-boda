@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>María & Xavier | Nuestra Boda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="María & Xavier | Nuestra Boda">
+  <meta property="og:description" content="Te invitamos a celebrar con nosotros el sábado 27 de junio de 2026 en Guayaquil.">
+  <meta property="og:image" content="https://TU-SITIO.netlify.app/preview-boda.jpg">
+  <meta property="og:url" content="https://TU-SITIO.netlify.app">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- CONTROL DE MÚSICA -->
+<div class="music-control" id="musicControl">
+  <button id="musicToggle">♫ Música</button>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="musica-boda.mp3" type="audio/mpeg">
+</audio>
+
+<main class="invitation">
+
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <img src="iglesia.png" alt="Iglesia Beata Mercedes de Jesús Molina">
+  </section>
+
+  <!-- NOMBRES -->
+  <section class="names fade-in">
+    <p class="blessing">Con la bendición de Dios y de nuestros padres</p>
+    <h1>María y Xavier</h1>
+  </section>
+
+  <!-- PADRES -->
+  <section class="parents fade-in">
+    <div>
+      <p>Bladimir Intriago Reyna</p>
+      <p>Giomar Celi Soto</p>
+    </div>
+    <div>
+      <p>Xavier Alvarado Pérez</p>
+      <p>Patricia Barros Morales</p>
+    </div>
+  </section>
+
+  <!-- TEXTO -->
+  <section class="details fade-in">
+    <p>
+      tenemos el placer de invitarles a la ceremonia religiosa que se celebrará (D.m)
+      el <strong>sábado 27 de junio</strong>, a las <strong>cuatro y media de la tarde</strong>
+      en la iglesia <strong>Beata Mercedes de Jesús Molina</strong>
+      y a la posterior celebración en el salón <strong>La Excelencia</strong>.
+    </p>
+  </section>
+
+  <!-- CONTADOR -->
+  <section class="countdown-section fade-in">
+    <p class="countdown-title">Faltan</p>
+
+    <div class="countdown">
+      <div><span id="days">00</span><small>Días</small></div>
+      <div><span id="hours">00</span><small>Horas</small></div>
+      <div><span id="minutes">00</span><small>Minutos</small></div>
+      <div><span id="seconds">00</span><small>Segundos</small></div>
+    </div>
+
+    <p class="countdown-date">27 de junio de 2026 · 4:30 p. m.</p>
+  </section>
+
+  <!-- MAPAS -->
+  <section class="maps fade-in">
+
+    <div class="map-block">
+      <h2>Ceremonia Religiosa</h2>
+      <p>Iglesia Beata Mercedes de Jesús Molina</p>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.1165933372736!2d-79.90095402503246!3d-2.108658797872504"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <a class="btn" target="_blank"
+        href="https://www.google.com/maps/search/?api=1&query=Iglesia+Beata+Mercedes+de+Jesús+Molina+Guayaquil">
+        Abrir ubicación
+      </a>
+    </div>
+
+    <div class="map-block">
+      <h2>Recepción</h2>
+      <p>Salones y Eventos La Excelencia</p>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.9438734415844!2d-79.89042922503234!3d-2.175025197805669"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <a class="btn" target="_blank"
+        href="https://www.google.com/maps/search/?api=1&query=Salones+y+Eventos+La+Excelencia+Guayaquil">
+        Abrir ubicación
+      </a>
+    </div>
+
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp-section fade-in">
+    <p class="rsvp-title">Confirmación de Asistencia</p>
+
+    <a class="btn whatsapp-btn" target="_blank"
+      href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Mar%C3%ADa%20y%20Xavier%20el%2027%20de%20junio%20de%202026.">
+      Confirmar por WhatsApp
+    </a>
+
+    <p class="no-music">
+      ¿Prefieres ver la invitación sin música?
+      <a href="?nomusic=true">Haz clic aquí</a>
+    </p>
+  </section>
+
+  <footer class="fade-in">
+    <p>Guayaquil, 2026</p>
+  </footer>
+
+</main>
+
+<!-- SCRIPTS -->
+<script>
+  /* CONTADOR */
+  const weddingDate = new Date("June 27, 2026 16:30:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const d = weddingDate - now;
+    if (d < 0) return;
+
+    document.getElementById("days").innerText = Math.floor(d / (1000*60*60*24));
+    document.getElementById("hours").innerText = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("minutes").innerText = Math.floor((d%(1000*60*60))/(1000*60));
+    document.getElementById("seconds").innerText = Math.floor((d%(1000*60))/1000);
+  }, 1000);
+
+  /* ANIMACIONES */
+  const elements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+  }, { threshold: 0.2 });
+  elements.forEach(el => observer.observe(el));
+
+  /* MUSICA / SIN MUSICA */
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('nomusic') === 'true') {
+    document.getElementById('musicControl').style.display = 'none';
+  } else {
+    const music = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicToggle');
+    let playing = false;
+    btn.onclick = () => {
+      playing ? music.pause() : music.play();
+      btn.innerText = playing ? '♫ Música' : '⏸ Pausar';
+      playing = !playing;
+    };
+  }
+</script>
+
+</body>
+</html>
