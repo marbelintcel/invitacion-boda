@@ -197,3 +197,30 @@ body {
     right: 10px;
   }
 }
+/* === AJUSTE PADRES RESPONSIVE ANDROID === */
+
+.parents {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  text-align: center;
+}
+
+.parents div {
+  flex: 1;
+}
+
+/* ANDROID / MOBILE */
+@media (max-width: 600px) {
+  .parents {
+    flex-direction: row;       /* SIGUEN HORIZONTALES */
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .parents div p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
