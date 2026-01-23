@@ -317,3 +317,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
 }
+.rsvp-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+  border-color: #7b1e24;
+  color: #7b1e24;
+  font-weight: 500;
+}
+
+.whatsapp-btn:hover {
+  background: #7b1e24;
+  color: #fff;
+}
+
+/* 📱 Android */
+@media (max-width: 600px) {
+  .rsvp-buttons {
+    flex-direction: column;
+  }
+}
