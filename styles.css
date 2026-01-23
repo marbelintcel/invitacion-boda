@@ -224,3 +224,80 @@ body {
     line-height: 1.6;
   }
 }
+/* ===== ESTILO CLÁSICO INVITACIÓN ===== */
+
+.names h1 {
+  letter-spacing: 2px;
+}
+
+.blessing {
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* PADRES – ESTILO COMO INVITACIÓN FÍSICA */
+.parents {
+  margin: 60px 0;
+}
+
+.parents div p {
+  margin: 8px 0;
+  font-style: italic;
+}
+
+/* TEXTO CENTRAL */
+.details {
+  max-width: 600px;
+  margin: 60px auto;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ANDROID ===== */
+@media (max-width: 600px) {
+
+  .names h1 {
+    font-size: 42px;
+  }
+
+  .blessing {
+    font-size: 16px;
+  }
+
+  .parents {
+    display: flex;
+    flex-direction: row;   /* SE MANTIENE COMO EN PAPEL */
+    gap: 15px;
+  }
+
+  .parents div p {
+    font-size: 14px;
+  }
+
+  .details {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+/* ===== COLOR VINO / BURDEOS PARA TITULOS ===== */
+
+.names h1 {
+  color: #7b1e2b;
+}
+
+.countdown-title,
+.countdown-date,
+.map-block h2,
+.rsvp-title {
+  color: #7b1e2b;
+}
+
+/* Botones más elegantes */
+.btn {
+  border-color: #7b1e2b;
+  color: #7b1e2b;
+}
+
+.btn:hover {
+  background: #7b1e2b;
+  color: #fff;
+}
