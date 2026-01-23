@@ -301,3 +301,19 @@ body {
   background: #7b1e2b;
   color: #fff;
 }
+.names h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 56px;
+  margin: 10px 0 40px;
+  font-weight: 400;
+
+  /* 🔧 FIX DE DISTORSIÓN */
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: #7b1e24; /* vino / burdeos elegante */
+  transform: translateZ(0);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
