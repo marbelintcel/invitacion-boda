@@ -1,3 +1,5 @@
+/* ===== BASE ===== */
+
 body {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
@@ -5,7 +7,6 @@ body {
   color: #2b2b2b;
 }
 
-/* CONTENEDOR GENERAL */
 .invitation {
   max-width: 800px;
   margin: auto;
@@ -13,46 +14,59 @@ body {
   text-align: center;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero img {
   max-width: 100%;
   margin-bottom: 40px;
 }
 
-/* NOMBRES */
+/* ===== NOMBRES ===== */
 .names h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 56px;
+  font-weight: 400;
   margin: 10px 0 40px;
   letter-spacing: 1px;
+  line-height: 1.2;
+  color: #7b1e24;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
 .blessing {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-style: italic;
 }
 
-/* PADRES */
+/* ===== PADRES (ESTILO PAPEL) ===== */
 .parents {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.parents div {
-  width: 45%;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 60px 0;
   text-align: center;
 }
 
-/* TEXTO */
-.details {
-  font-size: 20px;
-  line-height: 1.7;
-  margin: 0 auto;
+.parents div {
+  flex: 1;
 }
 
-/* CONTADOR */
+.parents div p {
+  margin: 8px 0;
+  font-style: italic;
+}
+
+/* ===== TEXTO CENTRAL ===== */
+.details {
+  max-width: 600px;
+  margin: 60px auto;
+  font-size: 20px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ===== CONTADOR ===== */
 .countdown-section {
   margin: 70px 0;
 }
@@ -65,22 +79,16 @@ body {
 
 .countdown span {
   font-size: 40px;
-  display: block;
 }
 
-/* MAPAS */
+/* ===== MAPAS ===== */
 .maps {
   margin: 70px 0;
-}
-
-.map-block {
-  margin-bottom: 70px;
 }
 
 .map-container {
   position: relative;
   padding-bottom: 56.25%;
-  height: 0;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 14px 35px rgba(0,0,0,0.15);
@@ -95,26 +103,34 @@ body {
   border: 0;
 }
 
-/* BOTONES */
+/* ===== BOTONES ===== */
 .btn {
   display: inline-block;
   margin-top: 25px;
   padding: 14px 36px;
-  border: 1px solid #2b2b2b;
+  border: 1px solid #7b1e24;
+  color: #7b1e24;
   text-decoration: none;
-  color: inherit;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  letter-spacing: 1px;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: #2b2b2b;
+  background: #7b1e24;
   color: #fff;
 }
 
-/* MÚSICA */
+/* ===== RSVP ===== */
+.rsvp-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== MÚSICA ===== */
 .music-control {
   position: fixed;
   top: 20px;
@@ -127,10 +143,9 @@ body {
   border: 1px solid #2b2b2b;
   padding: 8px 14px;
   cursor: pointer;
-  font-family: inherit;
 }
 
-/* ANIMACIONES */
+/* ===== ANIMACIONES ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(25px);
@@ -143,117 +158,13 @@ body {
 }
 
 /* ========================= */
-/* 📱 ANDROID / MÓVIL */
+/* 📱 MOBILE / ANDROID */
 /* ========================= */
-
 @media (max-width: 600px) {
 
   .invitation {
     padding: 30px 16px;
   }
-
-  .names h1 {
-    font-size: 44px;
-    margin-bottom: 20px;
-  }
-
-  .blessing {
-    font-size: 16px;
-    margin-bottom: 35px;
-  }
-
-  .parents {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .parents div {
-    width: 100%;
-  }
-
-  .details {
-    font-size: 18px;
-    line-height: 1.75;
-    padding: 0 10px;
-  }
-
-  .countdown {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .countdown span {
-    font-size: 32px;
-  }
-
-  .map-container {
-    border-radius: 14px;
-  }
-
-  .music-control {
-    top: 10px;
-    right: 10px;
-  }
-}
-/* === AJUSTE PADRES RESPONSIVE ANDROID === */
-
-.parents {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  text-align: center;
-}
-
-.parents div {
-  flex: 1;
-}
-
-/* ANDROID / MOBILE */
-@media (max-width: 600px) {
-  .parents {
-    flex-direction: row;       /* SIGUEN HORIZONTALES */
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .parents div p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-}
-/* ===== ESTILO CLÁSICO INVITACIÓN ===== */
-
-.names h1 {
-  letter-spacing: 2px;
-}
-
-.blessing {
-  margin-bottom: 40px;
-  font-style: italic;
-}
-
-/* PADRES – ESTILO COMO INVITACIÓN FÍSICA */
-.parents {
-  margin: 60px 0;
-}
-
-.parents div p {
-  margin: 8px 0;
-  font-style: italic;
-}
-
-/* TEXTO CENTRAL */
-.details {
-  max-width: 600px;
-  margin: 60px auto;
-  font-style: italic;
-}
-
-/* ===== RESPONSIVE ANDROID ===== */
-@media (max-width: 600px) {
 
   .names h1 {
     font-size: 42px;
@@ -264,80 +175,64 @@ body {
   }
 
   .parents {
-    display: flex;
-    flex-direction: row;   /* SE MANTIENE COMO EN PAPEL */
-    gap: 15px;
+    gap: 15px; /* se mantiene horizontal */
   }
 
   .parents div p {
     font-size: 14px;
+    line-height: 1.6;
   }
 
   .details {
     font-size: 16px;
     padding: 0 10px;
   }
-}
-/* ===== COLOR VINO / BURDEOS PARA TITULOS ===== */
 
-.names h1 {
-  color: #7b1e2b;
-}
+  .countdown span {
+    font-size: 32px;
+  }
 
-.countdown-title,
-.countdown-date,
-.map-block h2,
-.rsvp-title {
-  color: #7b1e2b;
-}
+  .map-container {
+    border-radius: 14px;
+  }
 
-/* Botones más elegantes */
-.btn {
-  border-color: #7b1e2b;
-  color: #7b1e2b;
-}
-
-.btn:hover {
-  background: #7b1e2b;
-  color: #fff;
-}
-.names h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 56px;
-  margin: 10px 0 40px;
-  font-weight: 400;
-
-  /* 🔧 FIX DE DISTORSIÓN */
-  letter-spacing: 1px;
-  line-height: 1.2;
-  color: #7b1e24; /* vino / burdeos elegante */
-  transform: translateZ(0);
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: geometricPrecision;
-}
-.rsvp-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.whatsapp-btn {
-  border-color: #7b1e24;
-  color: #7b1e24;
-  font-weight: 500;
-}
-
-.whatsapp-btn:hover {
-  background: #7b1e24;
-  color: #fff;
-}
-
-/* 📱 Android */
-@media (max-width: 600px) {
   .rsvp-buttons {
     flex-direction: column;
   }
+
+  .music-control {
+    top: 10px;
+    right: 10px;
+  }
+}
+/* =============================== */
+/* INVITACIÓN PERSONALIZADA */
+/* =============================== */
+
+.guest-info {
+  margin: 30px auto 40px;
+  text-align: center;
+}
+
+.guest-name {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.guest-cupos {
+  font-size: 16px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Si no hay invitado, se oculta */
+.guest-info.hidden {
+  display: none;
+}
+.guest-warning {
+  font-size: 16px;
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 30px;
 }
