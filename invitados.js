@@ -1,47 +1,34 @@
-// ===== CONFIGURACIÓN =====
+document.addEventListener("DOMContentLoaded", () => {
 
-// URL pública de Google Sheets (publicada como JSON)
-const SHEET_URL = "https://opensheet.elk.sh/ID_DE_TU_SHEET/Hoja1";
+  const params = new URLSearchParams(window.location.search);
 
-// Números de WhatsApp
-const WHATSAPP_NOVIA = "593989119180";
-const WHATSAPP_NOVIO = "593997875552";
+  const invitado = params.get("invitado");
+  const cupos = params.get("cupos");
 
-// =========================
+  // Referencias HTML
+  const guestName = document.getElementById("guestName");
+  const guestCupos = document.getElementById("guestCupos");
+  const btnNovia = document.getElementById("btnNovia");
+  const btnNovio = document.getElementById("btnNovio");
 
-// Obtener ID del invitado desde la URL
-const params = new URLSearchParams(window.location.search);
-const invitadoID = params.get("id");
+  // Si no viene invitado o cupos → no hacer nada
+  if (!invitado || !cupos) return;
 
-// Si no hay ID, no hacemos nada
-if (invitadoID) {
-  fetch(SHEET_URL)
-    .then(res => res.json())
-    .then(data => {
-      const invitado = data.find(i => i.id === invitadoID);
+  // Mostrar texto
+  guestName.textContent = invitado;
+  guestCupos.textContent = `Esta invitación es válida para ${cupos} personas`;
 
-      if (!invitado) return;
+  // Mensaje WhatsApp
+  const mensaje = encodeURIComponent(
+    `Hola, somos de ${invitado} y confirmamos ${cupos} asistentes para la boda de María y Xavier el 27 de junio de 2026.`
+  );
 
-      const nombre = invitado.nombre;
-      const cupos = invitado.cupos;
+  // Números reales
+  const novia = "593989119180";
+  const novio = "593997875552";
 
-      // Mostrar en la web
-      document.getElementById("guestName").innerText =
-        nombre;
+  // Asignar enlaces
+  btnNovia.href = `https://wa.me/${novia}?text=${mensaje}`;
+  btnNovio.href = `https://wa.me/${novio}?text=${mensaje}`;
 
-      document.getElementById("guestCupos").innerText =
-        `Esta invitación es válida para ${cupos} personas`;
-
-      // Mensaje WhatsApp
-      const mensaje = encodeURIComponent(
-        `Hola, somos de ${nombre} y confirmamos ${cupos} asistentes para la boda de María y Xavier el 27 de junio de 2026.`
-      );
-
-      // Botones
-      document.getElementById("btnNovia").href =
-        `https://wa.me/${WHATSAPP_NOVIA}?text=${mensaje}`;
-
-      document.getElementById("btnNovio").href =
-        `https://wa.me/${WHATSAPP_NOVIO}?text=${mensaje}`;
-    });
-}
+});
