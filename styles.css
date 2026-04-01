@@ -307,11 +307,6 @@ body {
   text-align: center;
 }
 
-.gift-title {
-  font-size: 26px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
 
 .gift-message {
   max-width: 600px;
@@ -354,4 +349,10 @@ body {
   .gift-message {
     font-size: 16px;
   }
+}
+/* ===== TÍTULOS DE SECCIÓN ===== */
+.section-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
